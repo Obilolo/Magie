@@ -1,6 +1,6 @@
 let Coeur = 0
 basic.forever(function () {
-    if (input.lightLevel() < 40) {
+    if (input.lightLevel() < 30) {
         if (Coeur == 0) {
             basic.showIcon(IconNames.Heart)
             Coeur = 1
