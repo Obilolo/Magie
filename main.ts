@@ -1,11 +1,14 @@
 input.onButtonPressed(Button.A, function () {
     Lumiere += -1
+    basic.showString("" + (Lumiere))
 })
 input.onButtonPressed(Button.B, function () {
     Lumiere += 1
+    basic.showString("" + (Lumiere))
 })
+let Lumiere = 0
 basic.showString("Magie !")
-let Lumiere = input.lightLevel()
+Lumiere = input.lightLevel()
 let Coeur = 1
 basic.showString("" + (Lumiere))
 basic.showIcon(IconNames.Heart)
