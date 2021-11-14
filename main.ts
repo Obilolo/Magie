@@ -1,15 +1,9 @@
-let Lumiere = 0
-input.onPinPressed(TouchPin.P0, function () {
-    if (Lumiere == 0) {
-        Lumiere = 1
-    } else {
-        Lumiere = 0
-    }
+input.onButtonPressed(Button.A, function () {
+    basic.showIcon(IconNames.Ghost)
 })
-basic.forever(function () {
-    if (Lumiere == 1) {
-        pins.digitalWritePin(DigitalPin.P2, pins.analogReadPin(AnalogPin.P1))
-    } else {
-        pins.analogWritePin(AnalogPin.P2, 0)
-    }
+input.onButtonPressed(Button.AB, function () {
+    basic.clearScreen()
+})
+input.onButtonPressed(Button.B, function () {
+    basic.showIcon(IconNames.TShirt)
 })
