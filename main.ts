@@ -1,13 +1,14 @@
-let Rapport = 0
-basic.forever(function () {
-    while (Rapport < 1023) {
+input.onButtonPressed(Button.A, function () {
+    if (Rapport > 0) {
+        Rapport += -10
         pins.digitalWritePin(DigitalPin.P0, Rapport)
-        Rapport = Rapport + 1
-        basic.pause(10)
-    }
-    while (Rapport > 0) {
-        pins.digitalWritePin(DigitalPin.P0, 0)
-        Rapport = Rapport - 1
-        basic.pause(10)
     }
 })
+input.onButtonPressed(Button.B, function () {
+    if (Rapport < 1020) {
+        Rapport += 10
+        pins.digitalWritePin(DigitalPin.P0, Rapport)
+    }
+})
+let Rapport = 0
+Rapport = 0
