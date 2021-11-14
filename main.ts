@@ -1,31 +1,15 @@
-input.onButtonPressed(Button.A, function () {
-    Lumiere += -1
-    basic.showString("" + (Lumiere))
-})
-input.onButtonPressed(Button.B, function () {
-    Lumiere += 1
-    basic.showString("" + (Lumiere))
-})
 let Lumiere = 0
-basic.showString("Magie !")
-Lumiere = input.lightLevel()
-let Coeur = 1
-basic.showString("" + (Lumiere))
-basic.showIcon(IconNames.Heart)
+input.onPinPressed(TouchPin.P0, function () {
+    if (Lumiere == 0) {
+        Lumiere = 1
+    } else {
+        Lumiere = 0
+    }
+})
 basic.forever(function () {
-    if (input.lightLevel() < Lumiere) {
-        if (Coeur == 0) {
-            basic.showIcon(IconNames.Heart)
-            Coeur = 1
-        } else {
-            basic.showLeds(`
-                . . . . .
-                . . . . .
-                . . . . .
-                . . . . .
-                . . . . .
-                `)
-            Coeur = 0
-        }
+    if (Lumiere == 1) {
+        pins.digitalWritePin(DigitalPin.P2, pins.analogReadPin(AnalogPin.P1))
+    } else {
+        pins.analogWritePin(AnalogPin.P2, 0)
     }
 })
