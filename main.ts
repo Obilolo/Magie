@@ -7,6 +7,8 @@ input.onButtonPressed(Button.A, function () {
 })
 input.onButtonPressed(Button.AB, function () {
     Rapport = 0
+    pins.digitalWritePin(DigitalPin.P0, Rapport)
+    basic.showString("" + (Rapport / 10))
 })
 input.onButtonPressed(Button.B, function () {
     if (Rapport < 1013) {
@@ -17,6 +19,7 @@ input.onButtonPressed(Button.B, function () {
 })
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
     Rapport = 1000
+    pins.digitalWritePin(DigitalPin.P0, Rapport)
     basic.showString("" + (Rapport / 10))
 })
 let Rapport = 0
