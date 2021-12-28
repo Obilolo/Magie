@@ -14,3 +14,4 @@ input.onButtonPressed(Button.B, function () {
 })
 let Rapport = 0
 Rapport = 0
+basic.showString("Moteur!")
