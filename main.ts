@@ -24,4 +24,5 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
 })
 let Rapport = 0
 Rapport = 0
+pins.digitalWritePin(DigitalPin.P0, Rapport)
 basic.showString("Moteur!")
